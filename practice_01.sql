@@ -1,1 +1,61 @@
-select * from  
+--ex1: hackerank-revising-the-select-query. 
+SELECT name FROM city
+WHERE population > 120000 
+AND countrycode = 'USA';
+
+--ex2: hackerank-japanese-cities-attributes. 
+SELECT * FROM city
+WHERE countrycode = 'JPN';
+
+--ex3: hackerank-weather-observation-station-1. 
+SELECT city, state FROM station;
+
+--ex4: hackerank-weather-observation-station-6. 
+SELECT DISTINCT city from station
+WHERE (city LIKE 'a%' OR city LIKE 'e%' OR city LIKE 'i%' OR city LIKE 'o%' OR city LIKE 'u%');
+ 
+--ex5: hackerank-weather-observation-station-7. 
+SELECT DISTINCT city FROM station
+WHERE (city LIKE '%a' OR city LIKE '%e' OR city LIKE '%i' OR city LIKE '%o' OR city LIKE '%u');
+
+--ex6: hackerank-weather-observation-station-9. 
+SELECT DISTINCT city FROM station
+WHERE (city NOT LIKE 'a%' AND city NOT LIKE 'e%' AND city NOT LIKE 'i%' AND city NOT LIKE 'o%' AND city NOT LIKE 'u%');
+
+--ex7: hackerank-name-of-employees.
+SELECT name FROM employee
+ORDER BY name;
+
+--ex8: hackerank-salary-of-employees. 
+SELECT name FROM employee
+WHERE salary >2000 AND months <10
+ORDER BY employee_id;
+
+--ex9: leetcode-recyclable-and-low-fat-products. 
+SELECT product_id FROM products
+WHERE low_fats ='Y' AND recyclable ='Y';
+
+--ex10: leetcode-find-customer-referee. 
+SELECT name FROM customer
+WHERE referee_id != 2 OR referee_id IS NULL;
+
+--ex11: leetcode-big-countries. 
+SELECT name, population, area FROM world
+WHERE area >= 3000000 OR population >= 25000000;
+
+--ex12: leetcode-article-views. 
+SELECT DISTINCT author_id AS id FROM views
+WHERE author_id = viewer_id
+ORDER BY id;
+
+--ex13: datalemur-tesla-unfinished-part. 
+SELECT part, assembly_step FROM parts_assembly
+WHERE finish_date IS NULL;
+
+--ex14: datalemur-lyft-driver-wages. 
+SELECT * FROM lyft_drivers
+WHERE yearly_salary <= 30000 OR yearly_salary >= 70000;
+
+--ex15: datalemur-find-the-advertising-channel.
+SELECT advertising_channel FROM uber_advertising
+WHERE money_spent >100000 AND year = 2019;
