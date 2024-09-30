@@ -49,7 +49,11 @@ SELECT COUNT(first_name) FROM employees
 WHERE (EXTRACT (month FROM joining_date) BETWEEN '1' AND '7') AND EXTRACT (year FROM joining_date) = '2022';
 
 --ex9: positions-of-letter-a.
-
-
+select POSITION('a' IN first_name) from worker
+where first_name = 'Amitah';
 
 --ex10: macedonian-vintages.
+select title,
+SUBSTRING (title,LENGTH(winery)+2,4) AS year
+from winemag_p2
+WHERE country = 'Macedonia';
