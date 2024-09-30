@@ -5,6 +5,10 @@ WHERE  id%2=0;
 --ex2: hackerrank-weather-observation-station-4.
 SELECT COUNT(city) - COUNT(DISTINCT city) AS difference FROM station;
 
+--ex3: hackerrank-the-blunder.
+
+
+
 --ex4: datalemur-alibaba-compressed-mean.
 SELECT ROUND(CAST(SUM(item_count*order_occurrences)/SUM(order_occurrences) AS decimal),1) AS mean
 FROM items_per_order;
