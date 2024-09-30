@@ -37,8 +37,19 @@ SELECT tweet_id FROM tweets
 WHERE LENGTH(content)>15;
 
 --ex7: user-activity-for-the-past-30-days.
-
+SELECT activity_date AS day,
+COUNT(DISTINCT user_id) AS active_users
+FROM activity
+WHERE activity_date BETWEEN '2019-06-28' AND '2019-07-28'
+GROUP BY day, user_id;
+--Lam the nao de biet user active daily? Ham DISTINCT khong work
 
 --ex8: number-of-hires-during-specific-time-period.
+SELECT COUNT(first_name) FROM employees
+WHERE (EXTRACT (month FROM joining_date) BETWEEN '1' AND '7') AND EXTRACT (year FROM joining_date) = '2022';
+
 --ex9: positions-of-letter-a.
+
+
+
 --ex10: macedonian-vintages.
